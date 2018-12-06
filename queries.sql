@@ -37,3 +37,12 @@ where id in (
       where title = 'first post'
       )
   );
+
+SELECT * FROM ads
+WHERE id IN (
+    SELECT ad_id FROM ads_category
+    WHERE category_id IN (
+        SELECT id FROM category
+        WHERE category = 'category1'
+        )
+    );
