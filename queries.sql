@@ -2,8 +2,17 @@
 insert into users (username, email, password)
 values ('username', 'email', 'password1');
 
+insert into users (username, email, password)
+values ('username2', 'email2', 'password2');
+
 insert into ads (title, description, user_id)
 values ('first post', 'description', 1);
+
+insert into ads (title, description, user_id)
+values ('second post', 'description', 2);
+
+insert into ads (title, description, user_id)
+values ('third post', 'description', 2);
 
 insert into category (category)
 values ('category1');
@@ -43,6 +52,12 @@ WHERE id IN (
     SELECT ad_id FROM ads_category
     WHERE category_id IN (
         SELECT id FROM category
-        WHERE category = 'category1'
+        WHERE category = 'category4'
         )
     );
+
+select * from ads
+where user_id = (
+           select id from users
+           where username = 'username2'
+           );
