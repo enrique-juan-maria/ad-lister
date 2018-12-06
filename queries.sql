@@ -25,7 +25,7 @@ where id in (
   select user_id from ads
   where id in(
       select id from ads
-      where title = 'given title'
+      where title = 'first post'
       )
   );
 
