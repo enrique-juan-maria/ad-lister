@@ -26,10 +26,8 @@ CREATE TABLE IF NOT EXISTS category(
 );
 
 CREATE TABLE IF NOT EXISTS ads_category(
-  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
   ad_id INT UNSIGNED NOT NULL,
   category_id INT UNSIGNED NOT NULL,
   FOREIGN KEY (ad_id) REFERENCES ads(id),
-  FOREIGN KEY (category_id) REFERENCES category (id),
-  PRIMARY KEY (id)
+  FOREIGN KEY (category_id) REFERENCES category (id)
 );
